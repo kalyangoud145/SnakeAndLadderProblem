@@ -9,8 +9,8 @@ namespace SnakeAndLadder
             MainClass start = new MainClass();
             start.StartGame();
         }
-        
-        public  void StartGame()
+
+        public void StartGame()
         {
             ///Single player with start position at 0
             int player1 = 0;
@@ -36,9 +36,14 @@ namespace SnakeAndLadder
                     player1 = player1 - diceValue;
                     break;
             }
+
+            if (player1 < 0)
+            {
+                player1 = 0;
+            }
             return player1;
         }
-    
+
 
     }
 }
