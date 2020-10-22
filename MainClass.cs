@@ -6,7 +6,14 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Snake And Ladder Simulator");
+            MainClass start = new MainClass();
+            start.StartGame();
+        }
+        
+        public  void StartGame()
+        {
+            ///Single player with start position at 0
+            int player1 = 0;
         }
     }
 }
