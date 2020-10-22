@@ -2,7 +2,7 @@
 
 namespace SnakeAndLadder
 {
-    class Program
+    class MainClass
     {
         static void Main(string[] args)
         {
