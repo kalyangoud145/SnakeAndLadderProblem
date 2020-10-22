@@ -14,16 +14,31 @@ namespace SnakeAndLadder
         {
             ///Single player with start position at 0
             int player1 = 0;
-            Console.WriteLine(RollDice());
+
         }
 
-        public int RollDice()
+        public int CalculatePlayerPostion(int player1, int diceValue)
         {
-            int n;
+            int x;
             Random random = new Random();
-            n = random.Next(7);
-            return (n == 0 ? 1 : n);
+            x = random.Next(3);
+            switch (x)
+            {
+                case 0:
+                    Console.WriteLine("No Play");
+                    break;
+                case 1:
+                    Console.WriteLine("Ladder");
+                    player1 = player1 + diceValue;
+                    break;
+                default:
+                    Console.WriteLine("Snake");
+                    player1 = player1 - diceValue;
+                    break;
+            }
+            return player1;
         }
+    
 
     }
 }
