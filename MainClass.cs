@@ -41,6 +41,10 @@ namespace SnakeAndLadder
             {
                 player1 = 0;
             }
+            else if (player1 > 100)
+            {
+                player1 = player1 - diceValue;
+            }
             return player1;
         }
 
