@@ -6,11 +6,11 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
-           // MainClass start = new MainClass();
+            Console.WriteLine("Loggging sample");
             SnakeNLadder snakeNLadder = new SnakeNLadder();
             snakeNLadder.StartGame();
         }
 
-      
+
     }
 }

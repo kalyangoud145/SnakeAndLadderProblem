@@ -1,0 +1,4 @@
+﻿2020-10-25 20:04:27.4327|DEBUG|SnakeAndLadder.NLog|Debug successfully: StartGame()
+2020-10-25 20:04:27.5746|INFO|SnakeAndLadder.NLog|CalculatePlayerPostion() passed..100
+2020-10-25 20:05:21.3437|DEBUG|SnakeAndLadder.NLog|Debug successfully: StartGame()
+2020-10-25 20:05:21.3779|INFO|SnakeAndLadder.NLog|CalculatePlayerPostion() passed..100

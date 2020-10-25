@@ -8,6 +8,7 @@ namespace SnakeAndLadder
     {
         //Constant
         public const int WIN_POINT = 100;
+        NLog nLog = new NLog();
         public void StartGame()
         {
             //Two players with start position at 0
@@ -29,6 +30,8 @@ namespace SnakeAndLadder
                     if (player1 == WIN_POINT)
                     {
                         Console.WriteLine("Player1 Won");
+                        nLog.LogDebug("Debug successfully: StartGame()");
+                        nLog.LogInfo("CalculatePlayerPostion() passed.." + player1);
                         Console.WriteLine("Die rolled " + player1DieCount + " times to win");
                         break;
                     }
@@ -42,6 +45,8 @@ namespace SnakeAndLadder
                     if (player2 == WIN_POINT)
                     {
                         Console.WriteLine("Player2 Won");
+                        nLog.LogDebug("Debug successfully: StartGame()");
+                        nLog.LogInfo("CalculatePlayerPostion() passed.." + player2);
                         Console.WriteLine("Die rolled " + player1DieCount + " times to win");
                         break;
                     }
