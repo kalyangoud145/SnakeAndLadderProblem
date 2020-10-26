@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SnakeAndLadder
 {
+    /// <summary>
+    /// Class for implementing snake and ladder game
+    /// </summary>
     class SnakeNLadder
     {
         //Constant
@@ -17,40 +20,52 @@ namespace SnakeAndLadder
             int player1DieCount = 0, player2DieCount = 0;
             int currentPlayer = -1;
             int player2 = 0;
-            
+
             while (true)
             {
                 diceValue = RollDice();
                 if (currentPlayer == -1)
                 {
+                    //Increments player count every time loop executes
                     player1DieCount++;
+                    //calls CalculatePlayerPostion() and gets player position
                     player1 = CalculatePlayerPostion(player1, diceValue);
+                    //Prints players position
                     Console.WriteLine("Player position 1: " + player1);
                     Console.WriteLine("Player position 2: " + player2);
+                    //Checks if player position is equal to 100 
                     if (player1 == WIN_POINT)
                     {
+                        //Prints player won
                         Console.WriteLine("Player1 Won");
                         nLog.LogDebug("Debug successfully: StartGame()");
                         nLog.LogInfo("CalculatePlayerPostion() passed.." + player1);
+                        //Prints number of time die rolled to win
                         Console.WriteLine("Die rolled " + player1DieCount + " times to win");
                         break;
                     }
                 }
                 else
                 {
+                    //Increments player count every time loop executes
                     player2DieCount++;
+                    //calls CalculatePlayerPostion() and gets player position
                     player2 = CalculatePlayerPostion(player2, diceValue);
+                    //Prints players position
                     Console.WriteLine("Player position 2: " + player2);
                     Console.WriteLine("Player position 1: " + player1);
+                    //Checks if player position is equal to 100
                     if (player2 == WIN_POINT)
                     {
                         Console.WriteLine("Player2 Won");
                         nLog.LogDebug("Debug successfully: StartGame()");
                         nLog.LogInfo("CalculatePlayerPostion() passed.." + player2);
+                        //Prints number of time die rolled to win
                         Console.WriteLine("Die rolled " + player1DieCount + " times to win");
                         break;
                     }
                 }
+                //Changes currentPlayer for switching between two players
                 currentPlayer = -(currentPlayer);
 
             }
@@ -97,11 +112,11 @@ namespace SnakeAndLadder
                     break;
             }
             //If player  position less than 0 the player positon will be reset to 0
-            //if player positon is greater than 100 then the player remains in same position
             if (player < 0)
             {
                 player = 0;
             }
+            //if player positon is greater than 100 then the player remains in same position
             else if (player > WIN_POINT)
             {
                 player = player - diceValue;
